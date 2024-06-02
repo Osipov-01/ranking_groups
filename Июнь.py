@@ -16,7 +16,7 @@ st.set_page_config(
 
 data_today = str(date.today().strftime('%d.%m.%Y'))
 st.title(f"Рейтинг групп на {data_today}")
-st.write(f"{datetime.now()}")
+#st.write(f"{datetime.now()}")
 
 names_groops = ['/','Группа 1', 'Группа 2', 'Группа 3']
 
