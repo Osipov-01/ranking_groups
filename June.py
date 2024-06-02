@@ -6,6 +6,14 @@ import plotly.graph_objects as go
 
 from io import StringIO  # got moved around in python3 if you're using that.
 
+st.set_page_config(
+    page_title="Общий анализ",
+    page_icon="🏤",
+    layout="wide",
+    initial_sidebar_state="expanded",
+
+)
+
 data_today = str(date.today().strftime('%d.%m.%Y'))
 st.title(f"Рейтинг групп на {data_today}")
 st.write(f"{datetime.now()}")
