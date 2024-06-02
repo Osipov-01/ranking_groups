@@ -6,3 +6,4 @@ Pillow
 requests
 scikit-learn
 ipython
+plotly
