@@ -45,7 +45,7 @@ df_3 = df_3.query('index == "ИТОГ"')
 
 # Переименуйте индекс
 new_index = pd.Index([names_groops[3]])  # Новый индекс
-df_3 = df_1.set_axis(new_index, axis='index')
+df_3 = df_3.set_axis(new_index, axis='index')
 
 #st.dataframe(df_3)
 
