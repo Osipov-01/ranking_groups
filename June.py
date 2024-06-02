@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
 from datetime import date
+from datetime import datetime
 import plotly.graph_objects as go
 
 from io import StringIO  # got moved around in python3 if you're using that.
 
 data_today = str(date.today().strftime('%d.%m.%Y'))
 st.title(f"Рейтинг групп на {data_today}")
-#st.write(f"{date.now()}")
+#st.write(f"{datetime.now()}")
 
 names_groops = ['/','Группа 1', 'Группа 2', 'Группа 3']
 
