@@ -7,7 +7,7 @@ from io import StringIO  # got moved around in python3 if you're using that.
 
 data_today = str(date.today().strftime('%d.%m.%Y'))
 st.title(f"Рейтинг групп на {data_today}")
-st.write(f'{date.now()}')
+st.write(f"{date.now()}")
 
 names_groops = ['/','Группа 1', 'Группа 2', 'Группа 3']
 
