@@ -5,6 +5,14 @@ import plotly.graph_objects as go
 
 from io import StringIO  # got moved around in python3 if you're using that.
 
+st.set_page_config(
+    page_title="Третья группа",
+    page_icon="🏤",
+    layout="wide",
+    initial_sidebar_state="expanded",
+
+)
+
 df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vTLw8fmxo0WAZU2HMKNpYWObok6TO9gqlLmGDUYb1Bp2Hc_MFPAwJT_IiO4VAJunQ/pub?output=csv')
 df = df.set_index('ФИО МКМ')
 #print(date.today().strftime('%d.%m.%Y'))
