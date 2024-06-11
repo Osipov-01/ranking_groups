@@ -22,7 +22,7 @@ text_input_container_2 = st.sidebar.empty()
 text_input_container_3 = st.sidebar.empty()
 text_input_container_4 = st.sidebar.empty()
 
-text_input_container_0.title("Авторизация")
+
 # st.sidebar.success("Select a page above.")
 
 if "login" not in st.session_state:
@@ -37,13 +37,9 @@ if "user" not in st.session_state:
 if "sign in" not in st.session_state:
     st.session_state["sign in"] = False
 
-login = text_input_container_1.text_input("Логин", st.session_state["login"], placeholder="login")
-st.session_state["login"] = login
-password = text_input_container_2.text_input("Пароль", st.session_state["password"], placeholder="password", type='password')
-st.session_state["password"] = password
-
-button_sign_in = text_input_container_3.button("Войти")
+button_sign_in = None
 button_logout = None
+
 
 if st.session_state["sign in"] == False:
     text_input_container_0.title("Авторизация")
@@ -145,12 +141,11 @@ else:
     st.subheader('Страх ДК')
     st.bar_chart(df_0['Страх ДК'])
     st.subheader('НС 1к+')
-    st.bar_chart(df_0['НС 1к+'])
+    st.bar_chart(df_0['НС 1к+'])    
 
 
 if button_sign_in:
     true_pass = 0
-    
     for ind in df_auth.index:
         log = df_auth['login'][ind]
         pas = df_auth['password'][ind]        
@@ -169,15 +164,12 @@ if button_sign_in:
             st.sidebar.warning('Введите все поля для входа')
         else: 
             st.sidebar.error('Неверный логин/пароль')
+        text_input_container_4.empty()
     else:       
         data_today = str(date.today().strftime('%d.%m.%Y'))
         st.title(f"Рейтинг групп на {data_today}")
         #st.write(f'{datetime.now}')
         #st.dataframe(df_auth)
-
-        print('========')
-        print(f'пользователь - {st.session_state["user"]}, логин - {st.session_state["login"]}')
-        print('========')
 
         button_logout = text_input_container_4.button("Выйти")
         if button_logout:
@@ -265,7 +257,6 @@ if button_sign_in:
         st.bar_chart(df_0['Страх ДК'])
         st.subheader('НС 1к+')
         st.bar_chart(df_0['НС 1к+'])
-
 
 
 
