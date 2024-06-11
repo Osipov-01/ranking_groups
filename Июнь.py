@@ -20,6 +20,7 @@ text_input_container_0 = st.sidebar.empty()
 text_input_container_1 = st.sidebar.empty()
 text_input_container_2 = st.sidebar.empty()
 text_input_container_3 = st.sidebar.empty()
+text_input_container_4 = st.sidebar.empty()
 
 text_input_container_0.title("Авторизация")
 # st.sidebar.success("Select a page above.")
@@ -42,6 +43,7 @@ password = text_input_container_2.text_input("Пароль", st.session_state["p
 st.session_state["password"] = password
 
 button_sign_in = text_input_container_3.button("Войти")
+button_logout = None
 
 if button_sign_in:
     true_pass = 0
@@ -73,6 +75,10 @@ if button_sign_in:
         print('========')
         print(f'пользователь - {st.session_state["user"]}, логин - {st.session_state["login"]}')
         print('========')
+
+        button_logout = text_input_container_4.button("Выйти")
+        if button_logout:
+            st.session_state["sign in"] = False
 
         names_groops = ['/','Группа 1', 'Группа 2', 'Группа 3']
 
