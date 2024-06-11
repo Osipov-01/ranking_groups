@@ -67,10 +67,6 @@ if button_sign_in:
         #st.write(f'{datetime.now}')
         #st.dataframe(df_auth)
 
-        print('==========')
-        print(f'пользователь - {st.session_state["user"]}; логин - {st.session_state["login"]}')
-        print('==========')
-
         names_groops = ['/','Группа 1', 'Группа 2', 'Группа 3']
 
         #группа 1
