@@ -76,4 +76,4 @@ else:
     st.bar_chart(df_0['Страх ДК'])
     st.subheader('НС 1к+')
     st.bar_chart(df_0['НС 1к+'])
-    st.session_state["sign in"] = False
+    #st.session_state["sign in"] = False
