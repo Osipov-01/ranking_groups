@@ -42,6 +42,7 @@ button_sign_in = text_input_container_3.button("Войти")
 
 if button_sign_in:
     true_pass = 0
+    st.session_state["sign in"] == False
     for ind in df_auth.index:
         log = df_auth['login'][ind]
         pas = df_auth['password'][ind]        
