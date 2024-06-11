@@ -16,9 +16,15 @@ st.set_page_config(
 if 'sign in' not in st.session_state:
     st.session_state['sign in'] = False
 
+text_input_container_4 = st.sidebar.empty()
+button_logout = None
+
 if st.session_state["sign in"] == False:
     st.sidebar.error("Для работы этой вкладки выполните вход в систему на вкладке 'Июнь'")
 else:
+    button_logout = text_input_container_4.button("Выйти")
+    if button_logout:
+        st.session_state["sign in"] = False
     st.sidebar.info(f'Вход выполнен пользователем - {st.session_state["user"]}')
     df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vQTreMVxXtZ16D5JRzh5_WP6TLA32jP0hXfg6F1eQaDKM66BBzmAo8diaVct0KIHg/pub?output=csv')
     df = df.set_index('ФИО МКМ')
@@ -69,3 +75,4 @@ else:
     st.bar_chart(df_0['Страх ДК'])
     st.subheader('НС 1к+')
     st.bar_chart(df_0['НС 1к+'])
+    st.session_state["sign in"] = False
